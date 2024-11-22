@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mental_health_tracker/screens/config.dart';
 import 'package:mental_health_tracker/screens/list_moodentry.dart';
 import 'package:mental_health_tracker/screens/login.dart';
 import 'package:mental_health_tracker/screens/moodentry_form.dart';
@@ -63,7 +64,7 @@ class ItemCard extends StatelessWidget {
           else if (item.name == "Logout") {
             final response = await request.logout(
                 // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-                "http://127.0.0.1:8000/auth/logout/");
+                "${AppConfig.baseUrl}auth/logout/");
             String message = response["message"];
             if (context.mounted) {
                 if (response['status']) {

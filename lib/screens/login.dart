@@ -1,3 +1,4 @@
+import 'package:mental_health_tracker/screens/config.dart';
 import 'package:mental_health_tracker/screens/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
@@ -104,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                       // Untuk menyambungkan Android emulator dengan Django pada localhost,
                       // gunakan URL http://10.0.2.2/
                       final response = await request
-                          .login("http://127.0.0.1:8000/auth/login/", {
+                          .login("${AppConfig.baseUrl}auth/login/", {
                         'username': username,
                         'password': password,
                       });
